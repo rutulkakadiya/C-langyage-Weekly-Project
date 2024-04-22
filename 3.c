@@ -2,20 +2,20 @@
 // Enter an integer: 12345
 // Reversed Number: 54321
 
-#include<stdio.h>
+#include <stdio.h>
 
-main(){
-    int a;
+int main() {
+    int number, reverse = 0, remainder;
 
-    printf("Enter the size=");
-    scanf("%d",&a);
+    printf("Enter a positive integer: ");
+    scanf("%d", &number);
 
-    for(int i=1; i<=a; i++){
-        printf("Number=");
-        scanf("%d",&i);
+    while (number != 0) {
+        remainder = number % 10;
+        reverse = reverse * 10 + remainder;
+        number /= 10;
     }
-    
-    for(int i=a; i>=1; i--){
-        printf("Reverse number=%d\n",i);
-    }
+
+    printf("Reversed number: %d\n", reverse);
+
 }
