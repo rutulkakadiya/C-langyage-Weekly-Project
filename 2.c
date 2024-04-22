@@ -5,25 +5,28 @@
 // Enter time (in years): 2
 // Compound Interest: 102.50
 
-#include<stdio.h>
+#include <stdio.h>
+#include<math.h>
 
-main(){
-    float amt,rate,year,interest;
-    
+int main() {
+    float principal, rate, time;
+    float amount, compound;
 
-    
-    printf("Enter the amount=");
-    scanf("%f",&amt);
-    
-    printf("Enter the interest rate=");
-    scanf("%f",&rate);
-    
-    printf("Enter the year=");
-    scanf("%f",&year);
-    
-    interest=(amt*rate*year)/100;
+    printf("Enter the principal amount: ");
+    scanf("%f", &principal);
 
-    
-    printf("Interest=%f",interest);
+    printf("Enter the rate of interest (in percentage): ");
+    scanf("%f", &rate);
+
+    rate /= 100;
+
+    printf("Enter the time (in years): ");
+    scanf("%f", &time);
+
+    amount = principal * pow(1 + rate, time);
+
+    compound = amount - principal;
+
+    printf("Compound Interest is: %.2lf\n", compound);
 
 }
